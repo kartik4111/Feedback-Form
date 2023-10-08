@@ -121,6 +121,52 @@ const columnRanges = [
 ["U", "AF"]
 ];
 
+// Create an array of the header values for the new row
+const newHeaderValues = ["About the Programme", "Two", "Three", "Four"];
+
+// Shift the existing header row down
+worksheet.spliceRows(1, 0, []);
+
+// Loop through the column ranges
+let headerValueIndex = 0;
+for (const [startColumn, endColumn] of columnRanges) {
+  // Determine the start and end indices for the new header row
+  const startColumnIndex = getColumnNameToIndex(startColumn);
+  const endColumnIndex = getColumnNameToIndex(endColumn);
+
+  // Insert the new header values in the specified range
+  for (let i = startColumnIndex; i <= endColumnIndex; i++) {
+    const cell = worksheet.getCell(1, i);
+    
+    if (headerValueIndex < newHeaderValues.length) {
+      cell.value = newHeaderValues[headerValueIndex];
+      // console.log(cell.value);
+      headerValueIndex++;
+    }
+  }
+
+  // Merge the cells for the new header row
+  const mergeRange = `${startColumn}1:${endColumn}1`;
+  worksheet.mergeCells(mergeRange);
+
+  // Apply styling to the new header row (if needed)
+  for (let i = startColumnIndex; i <= endColumnIndex; i++) {
+    const cell = worksheet.getCell(1, i);
+    cell.font={bold:true}
+    cell.alignment = { vertical: "middle", horizontal: "center" };
+    cell.fill = {
+      type: "pattern",
+      pattern: "solid",
+      fgColor: { argb: "FFFF00" }, // Yellow background color
+    };
+    cell.border = {
+      top: { style: 'thin' },
+      left: { style: 'thin' },
+      bottom: { style: 'thin' },
+      right: { style: 'thin' }
+    };
+  }
+}
 const averageOfAverages = {};
 for (const [startColumn, endColumn] of columnRanges) {
 const rangeAverages = [];
