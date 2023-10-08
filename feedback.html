@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Feedback Form</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .form-group {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="mt-4" style="text-align: center;">UNIVERSITY OF JAMMU</h1>
+    <h1 class="mt-4" style="text-align: center;">Student Feedback Form</h1>
+    <div class="container" style="margin-top: 5%;">
+      <!-- General Information Section -->
+      <form id="feedbackForm">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+          <label for="name">Name</label>
+        </div>
+        <div class="form-group">
+          <label for="gender">Gender:</label>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="gender" id="male" value="Male">
+            <label for="male" class="form-check-label">Male</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="gender" id="female" value="Female">
+            <label for="female" class="form-check-label">Female</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" name="gender" id="others" value="Others">
+            <label for="others" class="form-check-label">Others</label>
+          </div>
+        </div>
+        <!-- About the Programme Section -->
+        <fieldset class="form-group">
+          <legend>
+            <h3>About the Programme</h3>
+          </legend>
+          <ol>
+            <li class="form-group">
+              <label for="ques01">Aims & objectives of the programme are well defined and stand communicated:</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques01" value="5" id="ques01_5">
+                <label for="ques01_5" class="form-check-label">Strongly Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques01" value="4" id="ques01_4">
+                <label for="ques01_4" class="form-check-label">Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques01" value="3" id="ques01_3">
+                <label for="ques01_3" class="form-check-label">Not Sure</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques01" value="2" id="ques01_2">
+                <label for="ques01_2" class="form-check-label">Disagree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques01" value="1" id="ques01_1">
+                <label for="ques01_1" class="form-check-label">Strongly Disagree</label>
+              </div>
+            </li>
+            <li class="form-group">
+              <label for="ques02">The programme has a blend of theory & concepts as well as applied/latest information &
+                knowledge:</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques02" value="5" id="ques02_5">
+                <label for="ques02_5" class="form-check-label">Strongly Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques02" value="4" id="ques02_4">
+                <label for="ques02_4" class="form-check-label">Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques02" value="3" id="ques02_3">
+                <label for="ques02_3" class="form-check-label">Not Sure</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques02" value="2" id="ques02_2">
+                <label for="ques02_2" class="form-check-label">Disagree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques02" value="1" id="ques02_1">
+                <label for="ques02_1" class="form-check-label">Strongly Disagree</label>
+              </div>
+            </li>
+
+            <li class="form-group">
+              <label for="ques03">The programme provides knowledge & skills for employability/entrepreneurship:</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques03" value="5" id="ques03_5">
+                <label for="ques03_5" class="form-check-label">Strongly Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques03" value="4" id="ques03_4">
+                <label for="ques03_4" class="form-check-label">Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques03" value="3" id="ques03_3">
+                <label for="ques03_3" class="form-check-label">Not Sure</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques03" value="2" id="ques03_2">
+                <label for="ques03_2" class="form-check-label">Disagree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques03" value="1" id="ques03_1">
+                <label for="ques03_1" class="form-check-label">Strongly Disagree</label>
+              </div>
+            </li>
+            <li class="form-group">
+              <label for="ques04">The programme builds and enhances knowledge and interest in the area:</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques04" value="5" id="ques04_5">
+                <label for="ques04_5" class="form-check-label">Strongly Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques04" value="4" id="ques04_4">
+                <label for="ques04_4" class="form-check-label">Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques04" value="3" id="ques04_3">
+                <label for="ques04_3" class="form-check-label">Not Sure</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques04" value="2" id="ques04_2">
+                <label for="ques04_2" class="form-check-label">Disagree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques04" value="1" id="ques04_1">
+                <label for="ques04_1" class="form-check-label">Strongly Disagree</label>
+              </div>
+            </li>
+
+            <li class="form-group">
+              <label for="ques05">The infrastructural facilities/ equipments are adequate & appropriate to the
+                requirement
+                of the programme:</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques05" value="5" id="ques05_5">
+                <label for="ques05_5" class="form-check-label">Strongly Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques05" value="4" id="ques05_4">
+                <label for="ques05_4" class="form-check-label">Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques05" value="3" id="ques05_3">
+                <label for="ques05_3" class="form-check-label">Not Sure</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques05" value="2" id="ques05_2">
+                <label for="ques05_2" class="form-check-label">Disagree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques05" value="1" id="ques05_1">
+                <label for="ques05_1" class="form-check-label">Strongly Disagree</label>
+              </div>
+            </li>
+            <li class="form-group">
+              <label for="ques06">Teaching inputs are relevant & appropriate for the programme:</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques06" value="5" id="ques06_5">
+                <label for="ques06_5" class="form-check-label">Strongly Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques06" value="4" id="ques06_4">
+                <label for="ques06_4" class="form-check-label">Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques06" value="3" id="ques06_3">
+                <label for="ques06_3" class="form-check-label">Not Sure</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques06" value="2" id="ques06_2">
+                <label for="ques06_2" class="form-check-label">Disagree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques06" value="1" id="ques06_1">
+                <label for="ques06_1" class="form-check-label">Strongly Disagree</label>
+              </div>
+            </li>
+
+            <li class="form-group">
+              <label for="ques07">The books/reference material are available & adequate for the programme:</label>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques07" value="5" id="ques07_5">
+                <label for="ques07_5" class="form-check-label">Strongly Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques07" value="4" id="ques07_4">
+                <label for="ques07_4" class="form-check-label">Agree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques07" value="3" id="ques07_3">
+                <label for="ques07_3" class="form-check-label">Not Sure</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques07" value="2" id="ques07_2">
+                <label for="ques07_2" class="form-check-label">Disagree</label>
+              </div>
+              <div class="form-check">
+                <input type="radio" class="form-check-input" name="ques07" value="1" id="ques07_1">
+                <label for="ques07_1" class="form-check-label">Strongly Disagree</label>
+              </div>
+            </li>
+          </ol>
+        </fieldset>
+        <!-- About the Facilities at the Departmental Level Section -->
+        <fieldset class="form-group">
+          <legend>
+            <h3>About the Facilities at the Departmental Level</h3>
+          </legend>
+          <!-- General Infrastructure sub Section -->
+          <fieldset class="form-group"><br>
+            <ul>
+              <li>
+                <h4>General Infrastructure</h4>
+              </li>
+              <ol>
+                <li class="form-group">
+                  <label for="ques11">The department has adequate and well maintained infrastructure facilities for
+                    teaching-learning (Classrooms/ theatre halls/labs etc):</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques11" value="5" id="ques11_5">
+                    <label for="ques11_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques11" value="4" id="ques11_4">
+                    <label for="ques11_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques11" value="3" id="ques11_3">
+                    <label for="ques11_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques11" value="2" id="ques11_2">
+                    <label for="ques11_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques11" value="1" id="ques11_1">
+                    <label for="ques11_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques12">The classrooms are equipped with the necessary ICT facilities:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques12" value="5" id="ques12_5">
+                    <label for="ques12_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques12" value="4" id="ques12_4">
+                    <label for="ques12_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques12" value="3" id="ques12_3">
+                    <label for="ques12_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques12" value="2" id="ques12_2">
+                    <label for="ques12_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques12" value="1" id="ques12_1">
+                    <label for="ques12_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques13">The Department has back-up facility during power shut downs:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques13" value="5" id="ques13_5">
+                    <label for="ques13_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques13" value="4" id="ques13_4">
+                    <label for="ques13_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques13" value="3" id="ques13_3">
+                    <label for="ques13_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques13" value="2" id="ques13_2">
+                    <label for="ques13_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques13" value="1" id="ques13_1">
+                    <label for="ques13_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques14">Availability of clean drinking water facility in the Department:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques14" value="5" id="ques14_5">
+                    <label for="ques14_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques14" value="4" id="ques14_4">
+                    <label for="ques14_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques14" value="3" id="ques14_3">
+                    <label for="ques14_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques14" value="2" id="ques14_2">
+                    <label for="ques14_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques14" value="1" id="ques14_1">
+                    <label for="ques14_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques15">The washrooms are well maintained & cleaned:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques15" value="5" id="ques15_5">
+                    <label for="ques15_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques15" value="4" id="ques15_4">
+                    <label for="ques15_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques15" value="3" id="ques15_3">
+                    <label for="ques15_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques15" value="2" id="ques15_2">
+                    <label for="ques15_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques15" value="1" id="ques15_1">
+                    <label for="ques15_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques16">The students have access to internet and photocopying facility in the
+                    Department:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques16" value="5" id="ques16_5">
+                    <label for="ques16_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques16" value="4" id="ques16_4">
+                    <label for="ques16_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques16" value="3" id="ques16_3">
+                    <label for="ques16_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques16" value="2" id="ques16_2">
+                    <label for="ques16_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques16" value="1" id="ques16_1">
+                    <label for="ques16_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques17">The department has facilities for the differently-abled:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques17" value="5" id="ques17_5">
+                    <label for="ques17_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques17" value="4" id="ques17_4">
+                    <label for="ques17_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques17" value="3" id="ques17_3">
+                    <label for="ques17_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques17" value="2" id="ques17_2">
+                    <label for="ques17_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques17" value="1" id="ques17_1">
+                    <label for="ques17_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+
+              </ol>
+              <!-- Library sub Section -->
+              <li>
+                <h4>Library</h4>
+              </li>
+              <ol>
+                <li class="form-group">
+                  <label for="ques21">The library has physical facilities like adequate seating space, adequate
+                    ventilation (Air Cooler/fans), and proper illumination.:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques21" value="5" id="ques21_5">
+                    <label for="ques21_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques21" value="4" id="ques21_4">
+                    <label for="ques21_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques21" value="3" id="ques21_3">
+                    <label for="ques21_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques21" value="2" id="ques21_2">
+                    <label for="ques21_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques21" value="1" id="ques21_1">
+                    <label for="ques21_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques22">Adequate number of books/copies of books available:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques22" value="5" id="ques22_5">
+                    <label for="ques22_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques22" value="4" id="ques22_4">
+                    <label for="ques22_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques22" value="3" id="ques22_3">
+                    <label for="ques22_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques22" value="2" id="ques22_2">
+                    <label for="ques22_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques22" value="1" id="ques22_1">
+                    <label for="ques22_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques23">Latest editions of text books, reference books, journals are available in the
+                    library:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques23" value="5" id="ques23_5">
+                    <label for="ques23_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques23" value="4" id="ques23_4">
+                    <label for="ques23_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques23" value="3" id="ques23_3">
+                    <label for="ques23_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques23" value="2" id="ques23_2">
+                    <label for="ques23_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques23" value="1" id="ques23_1">
+                    <label for="ques23_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques24">The library staff is helpful and cordial:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques24" value="5" id="ques24_5">
+                    <label for="ques24_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques24" value="4" id="ques24_4">
+                    <label for="ques24_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques24" value="3" id="ques24_3">
+                    <label for="ques24_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques24" value="2" id="ques24_2">
+                    <label for="ques24_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques24" value="1" id="ques24_1">
+                    <label for="ques24_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+              </ol>
+              <li>
+                <h4>Governance</h4>
+              </li>
+              <ol>
+                <li class="form-group">
+                  <label for="ques31">Induction/orientation programmes are held at the beginning of the
+                    semester:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques31" value="5" id="ques31_5">
+                    <label for="ques31_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques31" value="4" id="ques31_4">
+                    <label for="ques31_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques31" value="3" id="ques31_3">
+                    <label for="ques31_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques31" value="2" id="ques31_2">
+                    <label for="ques31_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques31" value="1" id="ques31_1">
+                    <label for="ques31_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+
+                </li>
+                <li class="form-group">
+                  <label for="ques32">Teaching plans of courses are circulated at the beginning of the semester:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques32" value="5" id="ques32_5">
+                    <label for="ques32_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques32" value="4" id="ques32_4">
+                    <label for="ques32_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques32" value="3" id="ques32_3">
+                    <label for="ques32_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques32" value="2" id="ques32_2">
+                    <label for="ques32_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques32" value="1" id="ques32_1">
+                    <label for="ques32_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques33">The attendance and notifications with respect to examinations are displayed timely
+                    on the notice boards:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques33" value="5" id="ques33_5">
+                    <label for="ques33_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques33" value="4" id="ques33_4">
+                    <label for="ques33_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques33" value="3" id="ques33_3">
+                    <label for="ques33_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques33" value="2" id="ques33_2">
+                    <label for="ques33_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques33" value="1" id="ques33_1">
+                    <label for="ques33_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques34">Grievances /problems, if any are redressed well in time at departmental
+                    level:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques34" value="5" id="ques34_5">
+                    <label for="ques34_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques34" value="4" id="ques34_4">
+                    <label for="ques34_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques34" value="3" id="ques34_3">
+                    <label for="ques34_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques34" value="2" id="ques34_2">
+                    <label for="ques34_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques34" value="1" id="ques34_1">
+                    <label for="ques34_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques35">Availability of suggestion boxes & mechanism for obtaining feedback is prevalent
+                    in the department:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques35" value="5" id="ques35_5">
+                    <label for="ques35_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques35" value="4" id="ques35_4">
+                    <label for="ques35_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques35" value="3" id="ques35_3">
+                    <label for="ques35_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques35" value="2" id="ques35_2">
+                    <label for="ques35_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques35" value="1" id="ques35_1">
+                    <label for="ques35_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques36">There is interaction with experts/resource persons from other
+                    Universities:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques36" value="5" id="ques36_5">
+                    <label for="ques36_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques36" value="4" id="ques36_4">
+                    <label for="ques36_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques36" value="3" id="ques36_3">
+                    <label for="ques36_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques36" value="2" id="ques36_2">
+                    <label for="ques36_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques36" value="1" id="ques36_1">
+                    <label for="ques36_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques37">There is interaction with experts from the Industry/any other field other than
+                    Higher Education Institution:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques37" value="5" id="ques37_5">
+                    <label for="ques37_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques37" value="4" id="ques37_4">
+                    <label for="ques37_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques37" value="3" id="ques37_3">
+                    <label for="ques37_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques37" value="2" id="ques37_2">
+                    <label for="ques37_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques37" value="1" id="ques37_1">
+                    <label for="ques37_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques38">Activities other than academics (cultural, sports etc) are actively held for the
+                    students:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques38" value="5" id="ques38_5">
+                    <label for="ques38_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques38" value="4" id="ques38_4">
+                    <label for="ques38_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques38" value="3" id="ques38_3">
+                    <label for="ques38_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques38" value="2" id="ques38_2">
+                    <label for="ques38_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques38" value="1" id="ques38_1">
+                    <label for="ques38_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques39">Academic activities like seminars, conferences, publishing magazines etc.
+                    organized regularly:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques39" value="5" id="ques39_5">
+                    <label for="ques39_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques39" value="4" id="ques39_4">
+                    <label for="ques39_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques39" value="3" id="ques39_3">
+                    <label for="ques39_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques39" value="2" id="ques39_2">
+                    <label for="ques39_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques39" value="1" id="ques39_1">
+                    <label for="ques39_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques310">Outreach/ community development programmes are held for the students:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques310" value="5" id="ques310_5">
+                    <label for="ques310_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques310" value="4" id="ques310_4">
+                    <label for="ques310_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques310" value="3" id="ques310_3">
+                    <label for="ques310_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques310" value="2" id="ques310_2">
+                    <label for="ques310_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques310" value="1" id="ques310_1">
+                    <label for="ques310_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques311">The Department provides campus placement opportunities:</label>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques311" value="5" id="ques311_5">
+                    <label for="ques311_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques311" value="4" id="ques311_4">
+                    <label for="ques311_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques311" value="3" id="ques311_3">
+                    <label for="ques311_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques311" value="2" id="ques311_2">
+                    <label for="ques311_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" name="ques311" value="1" id="ques311_1">
+                    <label for="ques311_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+                </li>
+                <li class="form-group">
+                  <label for="ques312">There is a strong Alumni network/Association of the Department:</label>
+                  <div class="form-check">
+                      <input type="radio" class="form-check-input" name="ques312" value="5" id="ques312_5">
+                      <label for="ques312_5" class="form-check-label">Strongly Agree</label>
+                  </div>
+                  <div class="form-check">
+                      <input type="radio" class="form-check-input" name="ques312" value="4" id="ques312_4">
+                      <label for="ques312_4" class="form-check-label">Agree</label>
+                  </div>
+                  <div class="form-check">
+                      <input type="radio" class="form-check-input" name="ques312" value="3" id="ques312_3">
+                      <label for="ques312_3" class="form-check-label">Not Sure</label>
+                  </div>
+                  <div class="form-check">
+                      <input type="radio" class="form-check-input" name="ques312" value="2" id="ques312_2">
+                      <label for="ques312_2" class="form-check-label">Disagree</label>
+                  </div>
+                  <div class="form-check">
+                      <input type="radio" class="form-check-input" name="ques312" value="1" id="ques312_1">
+                      <label for="ques312_1" class="form-check-label">Strongly Disagree</label>
+                  </div>
+              </li>
+              </ol>
+            </ul>
+          </fieldset>
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Submit Feedback</button>
+        <button class="btn btn-secondary"><a href="generate.html" style="color: white;">Generate</a></button>
+        <script src="script.js"></script>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
