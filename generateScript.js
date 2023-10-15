@@ -1,3 +1,4 @@
+
 async function generateXLSX() {
   // Retrieve all feedback entries from Local Storage
   const feedbackEntries = JSON.parse(localStorage.getItem("feedbackEntries")) || [];
@@ -33,7 +34,7 @@ async function generateXLSX() {
     cell.alignment = { vertical: "middle", horizontal: "center" }; // Center-align text
 
     // Reduce column width and enable word wrap for headers that are not "Name" or "Gender"
-    if (cell.value !== "Name" && cell.value !== "Gender" && cell.value!=="About The Program") {
+    if (cell.value !== "Name" && cell.value !== "Gender" && cell.value !== "About The Program") {
       cell.width = 15; // Adjust the width as needed
       cell.alignment = { vertical: "top", horizontal: "center" };
       cell.alignment.wrapText = true;
@@ -108,106 +109,62 @@ async function generateXLSX() {
         bottom: { style: 'thin' },
         right: { style: 'thin' }
       };
-// Store the average in the corresponding columnAverages object
-columnAverages[key] = average;
-}
-}
-
-// Calculate the average of averages for specific column ranges
-const columnRanges = [
-["C", "I"],
-["J", "P"],
-["Q", "T"],
-["U", "AF"]
-];
-
-// Create an array of the header values for the new row
-const newHeaderValues = ["About the Programme", "Two", "Three", "Four"];
-
-// Shift the existing header row down
-worksheet.spliceRows(1, 0, []);
-
-// Loop through the column ranges
-let headerValueIndex = 0;
-for (const [startColumn, endColumn] of columnRanges) {
-  // Determine the start and end indices for the new header row
-  const startColumnIndex = getColumnNameToIndex(startColumn);
-  const endColumnIndex = getColumnNameToIndex(endColumn);
-
-  // Insert the new header values in the specified range
-  for (let i = startColumnIndex; i <= endColumnIndex; i++) {
-    const cell = worksheet.getCell(1, i);
-    
-    if (headerValueIndex < newHeaderValues.length) {
-      cell.value = newHeaderValues[headerValueIndex];
-      // console.log(cell.value);
-      headerValueIndex++;
+      // Store the average in the corresponding columnAverages object
+      columnAverages[key] = average;
     }
   }
 
-  // Merge the cells for the new header row
-  const mergeRange = `${startColumn}1:${endColumn}1`;
-  worksheet.mergeCells(mergeRange);
+  // Calculate the average of averages for specific column ranges
+  const columnRanges = [
+    ["C", "I"],
+    ["J", "P"],
+    ["Q", "T"],
+    ["U", "AF"]
+  ];
+  const averageOfAverages = {};
+  for (const [startColumn, endColumn] of columnRanges) {
+    const rangeAverages = [];
+    for (const key in columnAverages) {
+      const columnIndex = headers.indexOf(key) + 1;
+      if (columnIndex >= getColumnNameToIndex(startColumn) && columnIndex <= getColumnNameToIndex(endColumn)) {
+        rangeAverages.push(columnAverages[key]);
+      }
+    }
+    const rangeAverage = rangeAverages.length > 0 ? (rangeAverages.reduce((sum, avg) => sum + avg, 0) / rangeAverages.length).toFixed(2) : '0.00';
 
-  // Apply styling to the new header row (if needed)
-  for (let i = startColumnIndex; i <= endColumnIndex; i++) {
-    const cell = worksheet.getCell(1, i);
-    cell.font={bold:true}
-    cell.alignment = { vertical: "middle", horizontal: "center" };
-    cell.fill = {
-      type: "pattern",
-      pattern: "solid",
-      fgColor: { argb: "FFFF00" }, // Yellow background color
-    };
-    cell.border = {
-      top: { style: 'thin' },
-      left: { style: 'thin' },
-      bottom: { style: 'thin' },
-      right: { style: 'thin' }
-    };
+    averageOfAverages[`${startColumn}-${endColumn}`] = rangeAverage;
+    // Add a new row for the average value and merge cells
+    const mergeRange = `${startColumn}${feedbackEntries.length + 3}:${endColumn}${feedbackEntries.length + 3}`;
+    const averageRow = worksheet.getRow(feedbackEntries.length + 3);
+    averageRow.getCell(getColumnNameToIndex(startColumn)).value = rangeAverage;
+    worksheet.mergeCells(mergeRange);
+    averageRow.eachCell((cell) => {
+      cell.alignment = { vertical: "middle", horizontal: "center" };
+      cell.fill = {
+        type: "pattern",
+        pattern: "solid",
+        fgColor: { argb: "FFFF00" }, // Yellow background color
+      };
+      cell.border = {
+        top: { style: 'thin' },
+        left: { style: 'thin' },
+        bottom: { style: 'thin' },
+        right: { style: 'thin' }
+      };
+    });
   }
-}
-const averageOfAverages = {};
-for (const [startColumn, endColumn] of columnRanges) {
-const rangeAverages = [];
-for (const key in columnAverages) {
-  const columnIndex = headers.indexOf(key) + 1;
-  if (columnIndex >= getColumnNameToIndex(startColumn) && columnIndex <= getColumnNameToIndex(endColumn)) {
-    rangeAverages.push(columnAverages[key]);
+  // Store the averageOfAverages object in local storage
+  const averageOfAveragesJSON = JSON.stringify(averageOfAverages);
+  localStorage.setItem("averageOfAverages", averageOfAveragesJSON);
+
+  // Helper function to convert column name to index
+  function getColumnNameToIndex(columnName) {
+    let index = 0;
+    for (let i = 0; i < columnName.length; i++) {
+      index = index * 26 + columnName.charCodeAt(i) - 64;
+    }
+    return index;
   }
-}
-const rangeAverage = rangeAverages.length > 0 ? (rangeAverages.reduce((sum, avg) => sum + avg, 0) / rangeAverages.length).toFixed(2) : '0.00';
-
-averageOfAverages[`${startColumn}-${endColumn}`] = rangeAverage;
-// Add a new row for the average value and merge cells
-const mergeRange = `${startColumn}${feedbackEntries.length + 3}:${endColumn}${feedbackEntries.length + 3}`;
-const averageRow = worksheet.getRow(feedbackEntries.length + 3);
-averageRow.getCell(getColumnNameToIndex(startColumn)).value = rangeAverage;
-worksheet.mergeCells(mergeRange);
-  averageRow.eachCell((cell) => {
-    cell.alignment = { vertical: "middle", horizontal: "center" };
-    cell.fill = {
-      type: "pattern",
-      pattern: "solid",
-      fgColor: { argb: "FFFF00" }, // Yellow background color
-    };
-    cell.border = {
-      top: { style: 'thin' },
-      left: { style: 'thin' },
-      bottom: { style: 'thin' },
-      right: { style: 'thin' }
-    };
-  });
-}
-
-// Helper function to convert column name to index
-function getColumnNameToIndex(columnName) {
-let index = 0;
-for (let i = 0; i < columnName.length; i++) {
-  index = index * 26 + columnName.charCodeAt(i) - 64;
-}
-return index;
-}
 
   // Generate and save the XLSX file
   const buffer = await workbook.xlsx.writeBuffer();

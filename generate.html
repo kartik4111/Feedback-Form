@@ -7,13 +7,18 @@
   <title>Generate Files</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.js"></script>
+    <script src="jspdf.plugin.autotable.js"></script>
   <script src="generateScript.js">
+  </script>
+  <script src="generatePDF.js">
   </script>
 </head>
 
 <body>
   <h1>Generate Files</h1>
   <button onclick="generateXLSX()">Generate XLSX</button>
+  <button onclick="generatePDF()">Generate PDF</button>
 </body>
 
 </html>
