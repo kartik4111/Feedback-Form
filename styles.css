@@ -1,0 +1,100 @@
+
+/* Apply a white background to the body */
+body {
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Style the container for the form */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Center-align h1 elements */
+  h1 {
+    text-align: center;
+    font-weight: 600;
+  }
+  h2 {
+    text-align: center;
+    font-weight: 600;
+  }
+  h3 {
+    text-align: center;
+  }
+  
+  /* Style the form elements */
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Style the radio buttons and checkboxes */
+  .form-check-label {
+    padding-left: 30px;
+  }
+  
+  
+  /* Style the buttons */
+  .btn {
+    padding: 10px 20px;
+    margin-right: 10px;
+  }
+  
+  .btn-primary {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+  }
+  
+  .btn-secondary {
+    background-color: #0f9d58;
+    color: #fff;
+    border: none;
+  }
+  
+  /* Add some padding to the fieldset and legend */
+  fieldset {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  legend {
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  /* Style the submit button */
+  .btn-primary[type="submit"] {
+    background-color: #4285f4;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+  }
+  
+  /* Style the link within the secondary button */
+  .btn-secondary a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  /* Add some space between list items within a fieldset */
+  .form-group li {
+    margin-bottom: 10px;
+  }
+  
